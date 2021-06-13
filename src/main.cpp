@@ -3,7 +3,7 @@
 #include <ctime>
 #include <vector>
 
-#include "Tile.h"
+#include "Tile.hpp"
 
 using namespace sf;
 
@@ -20,7 +20,7 @@ bool lost;
 bool smileyPressed;
 bool gameStarted;
 
-RenderWindow window(VideoMode(W, H), "Minesweeper", Style::Titlebar | Style::Close);
+RenderWindow window(VideoMode(W, H), "Minesweeper", Style::Titlebar | Style::Close | Style::Resize);
 Sprite tileSpace, infoSpace, outline;
 
 bool outOfBounds(int x, int y) {
@@ -73,7 +73,7 @@ void resetGame(Clock *clock){
 
 	static const int bombCount = (columns * rows) / 6;
 
-	static struct Point {
+	struct Point {
 		Point(int x, int y) {
 			this->x = x;
 			this->y = y;
