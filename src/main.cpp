@@ -177,16 +177,16 @@ int main()
 
 	// Set the title bar icon.
 	Image icon;
-	icon.loadFromFile("../res/icon.png");
+	bool loaded = icon.loadFromFile("res/icon.png");
 	window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
 	window.setFramerateLimit(60);
 
 	// Loading the textures
 	Texture tile, info, frame;
-	tile.loadFromFile("../res/tiles.png");
-	info.loadFromFile("../res/info.png");
-	frame.loadFromFile("../res/outline.png");
+	loaded = tile.loadFromFile("res/tiles.png");
+	loaded = info.loadFromFile("res/info.png");
+	loaded = frame.loadFromFile("res/outline.png");
 
 	tileSpace.setTexture(tile);
 	infoSpace.setTexture(info);
