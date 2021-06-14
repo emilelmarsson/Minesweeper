@@ -8,7 +8,7 @@
 using namespace sf;
 
 const int SPRITE_SIZE = 16;
-const int columns = 20, rows = 20;
+const int columns = 30, rows = 30;
 
 const int tileSpaceX = 12, tileSpaceY = 55;
 int W = tileSpaceX + SPRITE_SIZE * columns + 8, H = tileSpaceY + SPRITE_SIZE * rows + 8;
@@ -20,7 +20,7 @@ bool lost;
 bool smileyPressed;
 bool gameStarted;
 
-RenderWindow window(VideoMode(W, H), "Minesweeper", Style::Titlebar | Style::Close | Style::Resize);
+RenderWindow window(VideoMode(W, H), "Minesweeper", Style::Titlebar | Style::Close);
 Sprite tileSpace, infoSpace, outline;
 
 bool outOfBounds(int x, int y) {
